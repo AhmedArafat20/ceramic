@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>توريد وتركيب السيراميك والرخام - الرياض</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F4EF;
+    --surface:#FFFFFF;
+    --surface-alt:#EFE8DC;
+    --ink:#241F1A;
+    --steel:#6C6255;
+    --muted:#8B8172;
+    --accent:#AD8143;
+    --accent-dark:#8A6531;
+    --accent-tint:#F1E5CC;
+    --stone:#4A433A;
+    --line:rgba(36,31,26,.12);
+    --radius-sm:8px;
+    --radius-md:14px;
+    --radius-lg:22px;
+    --shadow:0 16px 40px -18px rgba(36,31,26,.28);
+    --whatsapp:#25D366;
+    --whatsapp-dark:#1DA851;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Tajawal', sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Cairo', sans-serif;color:var(--ink);line-height:1.35;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  ul{list-style:none;}
+  img,svg{display:block;max-width:100%;}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+
+  .container{width:100%;max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* ================= HEADER ================= */
+  header.site-header{
+    position:sticky;top:0;z-index:500;
+    background:rgba(247,244,239,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{display:flex;align-items:center;justify-content:space-between;height:76px;}
+
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Cairo', sans-serif;font-weight:800;font-size:1.2rem;min-width:0;flex:1;}
+  .brand .logo-mark{width:40px;height:40px;flex-shrink:0;}
+  .brand .brand-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+  nav.main-nav{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+  nav.main-nav button{
+    padding:10px 18px;border-radius:999px;font-weight:700;font-size:.95rem;color:var(--steel);
+    transition:background .18s ease, color .18s ease;
+  }
+  nav.main-nav button:hover{background:var(--surface-alt);color:var(--ink);}
+  nav.main-nav button[aria-current="page"]{background:var(--ink);color:#fff;}
+
+  .header-cta{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+  .phone-pill{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--surface);border:1.5px solid var(--line);
+    padding:9px 16px;border-radius:999px;font-weight:700;font-size:.9rem;
+    direction:ltr;flex-shrink:0;
+  }
+  .phone-pill svg{width:18px;height:18px;color:var(--accent-dark);flex-shrink:0;}
+
+  .hamburger-btn{
+    display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+    width:44px;height:44px;border-radius:var(--radius-sm);
+    background:var(--surface);border:1.5px solid var(--line);flex-shrink:0;
+  }
+  .hamburger-btn .bar{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;
+    transition:transform .25s ease, opacity .2s ease;}
+  .hamburger-btn.is-active .bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger-btn.is-active .bar:nth-child(2){opacity:0;}
+  .hamburger-btn.is-active .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  @media (max-width:900px){
+    nav.main-nav{display:none;}
+    .phone-pill{width:44px;height:44px;padding:0;flex-shrink:0;}
+    .phone-pill span.txt{display:none;}
+    .hamburger-btn{display:flex;}
+  }
+  @media (max-width:480px){
+    .brand-text{display:none;}
+    .container{padding:0 16px;}
+    .header-cta{gap:8px;}
+  }
+
+  /* ---- mobile menu ---- */
+  .mobile-menu-overlay{position:fixed;inset:0;background:rgba(36,31,26,.5);opacity:0;pointer-events:none;transition:opacity .25s ease;z-index:950;}
+  .mobile-menu-overlay.is-open{opacity:1;pointer-events:auto;}
+  .mobile-menu{
+    position:fixed;top:0;right:0;height:100dvh;width:min(320px, 84vw);
+    background:var(--surface);box-shadow:-18px 0 40px -18px rgba(36,31,26,.35);z-index:1000;
+    display:flex;flex-direction:column;padding:22px 22px 28px;
+    transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);
+  }
+  .mobile-menu.is-open{transform:translateX(0);}
+  .mobile-menu-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:24px;}
+  .mobile-menu-head span{font-family:'Cairo', sans-serif;font-weight:800;font-size:1.05rem;}
+  .mobile-menu-close{width:38px;height:38px;border-radius:50%;background:var(--surface-alt);display:flex;align-items:center;justify-content:center;}
+  .mobile-menu-close svg{width:18px;height:18px;color:var(--ink);}
+  .mobile-menu-links{display:flex;flex-direction:column;gap:6px;margin-bottom:auto;}
+  .mobile-menu-links button{
+    display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 16px;
+    border-radius:var(--radius-sm);font-family:'Cairo', sans-serif;font-weight:700;font-size:1.05rem;
+    color:var(--ink);transition:background .18s ease;
+  }
+  .mobile-menu-links button svg{width:16px;height:16px;color:var(--muted);}
+  .mobile-menu-links button:hover{background:var(--surface-alt);}
+  .mobile-menu-links button[aria-current="page"]{background:var(--accent-tint);color:var(--accent-dark);}
+  .mobile-menu-links button[aria-current="page"] svg{color:var(--accent-dark);}
+  .mobile-menu-foot{display:flex;flex-direction:column;gap:12px;padding-top:22px;border-top:1px solid var(--line);}
+  .mobile-menu-foot .btn{width:100%;justify-content:center;}
+  .mobile-menu-foot .phone-pill{justify-content:center;width:100%;direction:ltr;}
+  @media (min-width:901px){.mobile-menu, .mobile-menu-overlay{display:none;}}
+
+  /* ================= PAGES ================= */
+  .page{display:none;}
+  .page.active{display:block;}
+  section{padding:88px 0;}
+  @media (max-width:700px){section{padding:56px 0;}}
+
+  .eyebrow-tag{
+    display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.85rem;color:var(--accent-dark);
+    background:var(--accent-tint);padding:6px 14px;border-radius:999px;margin-bottom:18px;
+  }
+
+  /* ---- HERO ---- */
+  .hero{padding-top:64px;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  .hero h1{font-size:clamp(2.1rem, 4.4vw, 3.3rem);font-weight:800;margin-bottom:22px;}
+  .hero p.lead{font-size:1.15rem;color:var(--steel);max-width:52ch;margin-bottom:34px;}
+  .btn-row{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:var(--radius-sm);
+    font-weight:700;font-size:1rem;transition:transform .16s ease, box-shadow .16s ease, background .16s ease;
+  }
+  .btn svg{width:20px;height:20px;}
+  .btn-primary{background:var(--ink);color:#fff;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+  .btn-whatsapp{background:var(--whatsapp);color:#fff;}
+  .btn-whatsapp:hover{background:var(--whatsapp-dark);transform:translateY(-2px);}
+  .btn-outline{background:transparent;border:1.5px solid var(--line);color:var(--ink);}
+  .btn-outline:hover{border-color:var(--ink);}
+
+  .hero-visual{position:relative;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;}
+  .hero-visual svg{width:100%;height:100%;}
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:320px;margin:0 auto;}
+  }
+
+  /* ---- STATS ---- */
+  .stats-bar{background:var(--ink);padding:44px 0;}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+  .stat-num{font-family:'Cairo', sans-serif;font-weight:800;font-size:2rem;color:#fff;}
+  .stat-label{color:#C9BC9E;font-size:.88rem;margin-top:4px;}
+  @media (max-width:700px){.stats-grid{grid-template-columns:repeat(2,1fr);row-gap:32px;}}
+
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:800;}
+  .section-head p{color:var(--steel);margin-top:14px;font-size:1.05rem;}
+
+  /* ---- SERVICES ---- */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .service-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px;
+    transition:border-color .18s ease, transform .18s ease;
+  }
+  .service-card:hover{border-color:var(--accent);transform:translateY(-4px);}
+  .service-icon{
+    width:48px;height:48px;border-radius:var(--radius-sm);background:var(--accent-tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  }
+  .service-icon svg{width:24px;height:24px;color:var(--accent-dark);}
+  .service-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;}
+  .service-card p{color:var(--steel);font-size:.95rem;}
+  @media (max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.services-grid{grid-template-columns:1fr;}}
+
+  /* ---- WHY US ---- */
+  .why-section{background:var(--surface-alt);}
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .why-item{display:flex;gap:16px;background:var(--surface);padding:22px;border-radius:var(--radius-md);border:1px solid var(--line);}
+  .why-icon{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;}
+  .why-icon svg{width:20px;height:20px;color:var(--accent-tint);}
+  .why-item h4{font-size:1.02rem;font-weight:700;margin-bottom:4px;}
+  .why-item p{color:var(--steel);font-size:.92rem;}
+  @media (max-width:700px){.why-grid{grid-template-columns:1fr;}}
+
+  /* ---- PROCESS ---- */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .process-step{position:relative;padding:0 20px;text-align:center;}
+  .process-step:not(:last-child)::after{
+    content:"";position:absolute;top:26px;right:calc(-50% + 26px);width:calc(100% - 52px);height:2px;background:var(--line);
+  }
+  .step-num{
+    width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;font-family:'Cairo',sans-serif;
+    font-weight:800;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+    position:relative;z-index:2;
+  }
+  .process-step h4{font-size:1rem;font-weight:700;margin-bottom:6px;}
+  .process-step p{color:var(--steel);font-size:.88rem;}
+  @media (max-width:900px){.process-grid{grid-template-columns:1fr;gap:28px;}.process-step::after{display:none;}}
+
+  /* ---- ABOUT PREVIEW ---- */
+  .about-preview{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;}
+  .about-preview .visual-box{
+    background:var(--ink);border-radius:var(--radius-lg);aspect-ratio:4/3;
+    display:flex;align-items:center;justify-content:center;padding:32px;
+  }
+  .about-preview .visual-box svg{width:100%;height:100%;}
+  .about-preview h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:18px;}
+  .about-preview p{color:var(--steel);margin-bottom:16px;}
+  @media (max-width:900px){.about-preview{grid-template-columns:1fr;}}
+
+  /* ---- COVERAGE ---- */
+  .coverage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .coverage-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px;}
+  .coverage-card .pin{display:flex;align-items:center;gap:10px;font-family:'Cairo',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:10px;}
+  .coverage-card .pin svg{width:20px;height:20px;color:var(--accent-dark);}
+  .coverage-card p{color:var(--steel);font-size:.92rem;}
+  @media (max-width:700px){.coverage-grid{grid-template-columns:1fr;}}
+
+  /* ---- CTA BANNER ---- */
+  .cta-banner{
+    background:linear-gradient(135deg, var(--accent-dark), var(--accent));
+    border-radius:var(--radius-lg);padding:56px;display:flex;align-items:center;justify-content:space-between;
+    gap:32px;flex-wrap:wrap;max-width:1132px;margin-inline:auto;color:#fff;
+  }
+  .cta-banner h2{color:#fff;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:800;max-width:26ch;}
+  .cta-banner p{color:#F7ECD4;margin-top:10px;}
+  .cta-banner .btn-primary{background:#fff;color:var(--accent-dark);}
+  .cta-banner .btn-primary:hover{box-shadow:0 16px 40px -14px rgba(0,0,0,.35);}
+  @media (max-width:700px){.cta-banner{padding:36px 24px;}}
+
+  /* ---- FOOTER ---- */
+  footer{background:var(--ink);color:#D8CFBE;padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+  .footer-grid h4{color:#fff;font-size:1rem;margin-bottom:16px;}
+  .footer-grid p, .footer-grid li{color:#B6AA92;font-size:.92rem;margin-bottom:10px;}
+  .footer-grid a:hover{color:#fff;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:10px;font-size:.85rem;color:#8F8571;
+  }
+  @media (max-width:700px){.footer-grid{grid-template-columns:1fr;}}
+
+  /* ================= ABOUT PAGE ================= */
+  .page-hero{background:var(--surface-alt);padding:64px 0 48px;}
+  .page-hero h1{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;}
+  .page-hero p{color:var(--steel);margin-top:14px;max-width:60ch;font-size:1.05rem;}
+
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .story-grid p{color:var(--steel);margin-bottom:16px;}
+  .mv-cards{display:grid;gap:18px;}
+  .mv-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:24px;}
+  .mv-card h4{font-family:'Cairo',sans-serif;font-weight:700;margin-bottom:8px;font-size:1.05rem;color:var(--accent-dark);}
+  .mv-card p{color:var(--steel);font-size:.95rem;margin:0;}
+  @media (max-width:800px){.story-grid{grid-template-columns:1fr;}}
+
+  .expertise-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+  .expertise-list li{
+    display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius-sm);padding:16px;font-size:.95rem;
+  }
+  .expertise-list svg{width:20px;height:20px;color:var(--accent-dark);flex-shrink:0;margin-top:2px;}
+  @media (max-width:700px){.expertise-list{grid-template-columns:1fr;}}
+
+  /* ================= CONTACT PAGE ================= */
+  .contact-grid{display:grid;grid-template-columns:.95fr 1.15fr;gap:48px;align-items:start;}
+  .contact-card{background:var(--ink);color:#fff;border-radius:var(--radius-lg);padding:38px;}
+  .contact-card h3{color:#fff;font-size:1.3rem;margin-bottom:22px;}
+  .contact-row{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+  .contact-row:last-of-type{border-bottom:none;}
+  .contact-row .ic{width:42px;height:42px;flex-shrink:0;background:rgba(255,255,255,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .contact-row .ic svg{width:19px;height:19px;color:var(--accent-tint);}
+  .contact-row .big-phone{font-family:'Cairo',sans-serif;font-weight:800;font-size:1.3rem;direction:ltr;display:inline-block;}
+  .contact-row span.label{display:block;font-size:.82rem;color:#B6AA92;margin-bottom:2px;}
+  .contact-card .btn-whatsapp{width:100%;justify-content:center;margin-top:22px;}
+
+  .form-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:38px;}
+  .form-card h3{font-size:1.3rem;margin-bottom:8px;}
+  .form-card p.hint{color:var(--steel);font-size:.92rem;margin-bottom:24px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field label{font-size:.88rem;font-weight:700;color:var(--steel);}
+  .field input, .field select, .field textarea{
+    border:1.5px solid var(--line);border-radius:var(--radius-sm);padding:12px 14px;font-family:inherit;
+    font-size:.95rem;background:#fff;color:var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--accent);}
+  .field.full{grid-column:1/-1;}
+  .form-note{font-size:.82rem;color:var(--muted);margin-top:14px;}
+  @media (max-width:800px){.contact-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
+
+  .coverage-note{background:var(--surface-alt);border-radius:var(--radius-md);padding:26px;margin-top:28px;}
+  .coverage-note h4{font-size:1rem;margin-bottom:10px;}
+  .coverage-note p{color:var(--steel);font-size:.92rem;}
+
+  /* ================= FLOATING ACTIONS ================= */
+  .floating-actions{position:fixed;bottom:24px;left:24px;z-index:900;display:flex;flex-direction:column;gap:14px;}
+  .fab{
+    width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 28px -8px rgba(36,31,26,.45);position:relative;transition:transform .18s ease;
+  }
+  .fab:hover{transform:scale(1.07);}
+  .fab svg{width:26px;height:26px;color:#fff;}
+  .fab-whatsapp{background:var(--whatsapp);}
+  .fab-contact{background:var(--ink);}
+  .fab .tip{
+    position:absolute;right:70px;top:50%;transform:translateY(-50%);background:var(--ink);color:#fff;
+    font-size:.8rem;font-weight:700;padding:7px 14px;border-radius:999px;white-space:nowrap;
+    opacity:0;pointer-events:none;transition:opacity .16s ease;
+  }
+  .fab:hover .tip{opacity:1;}
+  @media (max-width:600px){.fab .tip{display:none;}.fab{width:52px;height:52px;}}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important;transition:none !important;}
+  }
+
+  @keyframes veinDraw{from{stroke-dashoffset:340;}to{stroke-dashoffset:0;}}
+  .marble-vein{stroke-dasharray:340;animation:veinDraw 2.2s .3s ease forwards;}
+  @keyframes tileFade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  .tile-sq{animation:tileFade .6s ease forwards;opacity:0;}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <div class="brand">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="4" width="40" height="40" rx="10" fill="#241F1A"/>
+        <rect x="12" y="12" width="10" height="10" fill="#F1E5CC"/>
+        <rect x="26" y="12" width="10" height="10" fill="#AD8143"/>
+        <rect x="12" y="26" width="10" height="10" fill="#AD8143"/>
+        <rect x="26" y="26" width="10" height="10" fill="#F1E5CC"/>
+      </svg>
+      <span class="brand-text">السيراميك والرخام</span>
+    </div>
+    <nav class="main-nav" aria-label="التنقل الرئيسي">
+      <button data-page="home" aria-current="page">الرئيسية</button>
+      <button data-page="about">من نحن</button>
+      <button data-page="contact">اتصل بنا</button>
+    </nav>
+    <div class="header-cta">
+      <a class="phone-pill" href="tel:+966568438242">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.94.68 2.86a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.22-1.25a2 2 0 0 1 2.11-.45c.92.32 1.88.55 2.86.68A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="txt">0568438242</span>
+      </a>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+<nav class="mobile-menu" id="mobile-menu" aria-label="القائمة الجانبية">
+  <div class="mobile-menu-head">
+    <span>القائمة</span>
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="إغلاق القائمة">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul class="mobile-menu-links">
+    <li><button data-page="home" aria-current="page">الرئيسية <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button></li>
+    <li><button data-page="about">من نحن <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button></li>
+    <li><button data-page="contact">اتصل بنا <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button></li>
+  </ul>
+  <div class="mobile-menu-foot">
+    <a class="phone-pill" href="tel:+966568438242">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.94.68 2.86a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.22-1.25a2 2 0 0 1 2.11-.45c.92.32 1.88.55 2.86.68A2 2 0 0 1 22 16.92z"/></svg>
+      0568438242
+    </a>
+    <a class="btn btn-whatsapp" href="https://wa.me/966568438242?text=مرحبا%2C%20أحتاج%20استفسار%20عن%20السيراميك%20والرخام" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.45 1.29 4.9L2 22l5.32-1.39a9.9 9.9 0 0 0 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.64-1.03-5.13-2.9-7C17.18 3.03 14.68 2 12.04 2zm5.8 14.14c-.24.68-1.4 1.33-1.93 1.4-.5.07-1.11.1-1.79-.11-.41-.13-.95-.31-1.63-.61-2.87-1.24-4.74-4.13-4.89-4.32-.14-.19-1.17-1.56-1.17-2.98 0-1.42.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.11.32.02.51-.09.19-.14.31-.27.48-.14.17-.29.38-.41.51-.14.15-.29.31-.12.6.16.29.73 1.2 1.57 1.95 1.08.96 1.99 1.26 2.28 1.4.29.14.46.12.63-.07.18-.19.75-.87.95-1.17.19-.29.39-.24.65-.15.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.72-.17 1.4z"/></svg>
+      واتساب فوري
+    </a>
+  </div>
+</nav>
+
+<!-- ======================= HOME PAGE ======================= -->
+<main id="home" class="page active">
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow-tag">معرض السيراميك والرخام · الرياض</span>
+        <h1>سيراميك ورخام يليق بذوقك، من التوريد إلى التركيب</h1>
+        <p class="lead">نوفر أفضل أنواع الرخام الطبيعي والسيراميك المستورد والمحلي، مع فريق تركيب محترف يخدم جميع أحياء الرياض بجودة والتزام بالمواعيد.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="tel:+966568438242">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.94.68 2.86a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.22-1.25a2 2 0 0 1 2.11-.45c.92.32 1.88.55 2.86.68A2 2 0 0 1 22 16.92z"/></svg>
+            اتصل الآن
+          </a>
+          <a class="btn btn-whatsapp" href="https://wa.me/966568438242?text=مرحبا%2C%20أحتاج%20استفسار%20عن%20السيراميك%20والرخام" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.45 1.29 4.9L2 22l5.32-1.39a9.9 9.9 0 0 0 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.64-1.03-5.13-2.9-7C17.18 3.03 14.68 2 12.04 2zm5.8 14.14c-.24.68-1.4 1.33-1.93 1.4-.5.07-1.11.1-1.79-.11-.41-.13-.95-.31-1.63-.61-2.87-1.24-4.74-4.13-4.89-4.32-.14-.19-1.17-1.56-1.17-2.98 0-1.42.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.11.32.02.51-.09.19-.14.31-.27.48-.14.17-.29.38-.41.51-.14.15-.29.31-.12.6.16.29.73 1.2 1.57 1.95 1.08.96 1.99 1.26 2.28 1.4.29.14.46.12.63-.07.18-.19.75-.87.95-1.17.19-.29.39-.24.65-.15.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.72-.17 1.4z"/></svg>
+            واتساب فوري
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="20" width="280" height="280" rx="24" fill="#241F1A"/>
+          <rect class="tile-sq" style="animation-delay:.1s" x="50" y="50" width="100" height="100" rx="4" fill="#3A332B"/>
+          <rect class="tile-sq" style="animation-delay:.25s" x="160" y="50" width="100" height="100" rx="4" fill="#4A433A"/>
+          <rect class="tile-sq" style="animation-delay:.4s" x="50" y="160" width="100" height="100" rx="4" fill="#4A433A"/>
+          <rect class="tile-sq" style="animation-delay:.55s" x="160" y="160" width="100" height="100" rx="4" fill="#3A332B"/>
+          <path class="marble-vein" d="M55 260 C 110 210, 140 240, 170 190 S 250 100, 270 60" stroke="#D9B673" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="270" cy="60" r="5" fill="#D9B673"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-bar">
+    <div class="container stats-grid">
+      <div><div class="stat-num">+8</div><div class="stat-label">سنوات خبرة في السوق</div></div>
+      <div><div class="stat-num">+300</div><div class="stat-label">مشروع تركيب منفذ</div></div>
+      <div><div class="stat-num">+150</div><div class="stat-label">تشكيلة رخام وسيراميك</div></div>
+      <div><div class="stat-num">كل الرياض</div><div class="stat-label">تغطية توريد وتركيب</div></div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow-tag">خدماتنا</span>
+        <h2>حلول متكاملة للرخام والسيراميك</h2>
+        <p>من اختيار النوع المناسب إلى التركيب النهائي، نوفر خدمة متكاملة تناسب المشاريع السكنية والتجارية.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6c4 4 12 4 16 0M4 12c4 4 12 4 16 0M4 18c4 4 12 4 16 0"/></svg></div>
+          <h3>رخام طبيعي</h3>
+          <p>تشكيلة واسعة من الرخام الطبيعي المستورد والمحلي بألوان ودرجات مختلفة تناسب كل ذوق.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></div>
+          <h3>سيراميك أرضيات وحوائط</h3>
+          <p>سيراميك بمقاسات وتصاميم متعددة للأرضيات والحوائط، بجودة تتحمل الاستخدام اليومي.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 12v6a2 2 0 002 2h14a2 2 0 002-2v-6M7 12V6a2 2 0 012-2h6a2 2 0 012 2v6"/></svg></div>
+          <h3>كاونترات مطابخ وحمامات</h3>
+          <p>تفصيل وتركيب كاونترات رخام وسيراميك للمطابخ والحمامات بمقاسات مضبوطة حسب الموقع.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M4 20V10l4-2v12M12 20V6l4-2v16M20 20V14"/></svg></div>
+          <h3>واجهات ودرج رخامي</h3>
+          <p>تكسية واجهات المباني وتنفيذ درج الرخام بلمسة فخمة تدوم لسنوات طويلة.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h13l4 4v6a2 2 0 01-2 2H3a2 2 0 01-2-2V9a2 2 0 012-2z"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="16.5" cy="18.5" r="1.5"/></svg></div>
+          <h3>توريد بالجملة للمقاولين</h3>
+          <p>أسعار جملة وتوريد بكميات كبيرة لمشاريع المقاولين وشركات التطوير العقاري.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-1.5z"/></svg></div>
+          <h3>صيانة وتلميع الرخام</h3>
+          <p>خدمات جلي وتلميع الرخام القديم لإعادة رونقه ولمعانه الطبيعي.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section" id="why-us">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow-tag">لماذا نختارنا</span>
+        <h2>جودة تدوم وتعامل تقدر تثق فيه</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div><h4>تشكيلة واسعة ومتجددة</h4><p>رخام وسيراميك مستورد ومحلي بخامات وألوان تناسب مختلف الأذواق والمشاريع.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg></div>
+          <div><h4>فريق تركيب محترف</h4><p>عمالة فنية مدرّبة على أحدث طرق التركيب والقص لضمان دقة التنفيذ.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div><h4>التزام بالمواعيد</h4><p>نلتزم بجدول زمني واضح للتوريد والتركيب دون تأخير يعطّل مشروعك.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6z"/></svg></div>
+          <div><h4>ضمان على الجودة</h4><p>ضمان مكتوب على جودة المواد وحرفية التركيب في جميع مشاريعنا.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 6 5 9.5 5 13a7 7 0 0014 0c0-3.5-3-7-7-11z"/></svg></div>
+          <div><h4>تغطية جميع أحياء الرياض</h4><p>نصل إلى موقعك أينما كان داخل الرياض بفرق ميدانية جاهزة.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M2 12l3 3 4-4"/></svg></div>
+          <div><h4>أسعار تنافسية وشفافة</h4><p>عروض أسعار واضحة بالجملة والتجزئة دون تكاليف خفية.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow-tag">آلية العمل</span>
+        <h2>من التواصل الأول إلى التسليم النهائي</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step"><div class="step-num">1</div><h4>تواصل معنا</h4><p>اتصال أو رسالة واتساب لتحديد احتياجك ومساحة المشروع.</p></div>
+        <div class="process-step"><div class="step-num">2</div><h4>اختيار النوع</h4><p>نساعدك في اختيار الرخام أو السيراميك المناسب للون والاستخدام.</p></div>
+        <div class="process-step"><div class="step-num">3</div><h4>القياس والتركيب</h4><p>فريقنا يقوم بالقياس الدقيق والتركيب الاحترافي في موقعك.</p></div>
+        <div class="process-step"><div class="step-num">4</div><h4>التسليم والضمان</h4><p>تسليم نهائي مع ضمان مكتوب على المواد والتركيب.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-preview">
+    <div class="container about-preview">
+      <div class="visual-box">
+        <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="180" height="130" rx="10" fill="#3A332B"/>
+          <rect x="30" y="30" width="60" height="90" rx="3" fill="#F1E5CC" opacity=".9"/>
+          <rect x="110" y="30" width="60" height="90" rx="3" fill="#AD8143" opacity=".9"/>
+        </svg>
+      </div>
+      <div>
+        <span class="eyebrow-tag">من نحن</span>
+        <h2>خبرة متخصصة في عالم الرخام والسيراميك بالرياض</h2>
+        <p>نعمل في مجال توريد وتركيب الرخام والسيراميك بالرياض، ونخدم المشاريع السكنية والتجارية بمختلف أحجامها.</p>
+        <p>هدفنا تقديم منتج بجودة عالية وتركيب دقيق يعكس ذوق العميل ويدوم لسنوات طويلة.</p>
+        <a class="btn btn-outline" data-page="about" href="#">تعرف علينا أكثر</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section" id="coverage">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow-tag">مناطق التغطية</span>
+        <h2>نخدم جميع أحياء الرياض</h2>
+      </div>
+      <div class="coverage-grid">
+        <div class="coverage-card">
+          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>شمال الرياض</div>
+          <p>خدمة توريد وتركيب لأحياء الملقا، النرجس، الياسمين وما حولها.</p>
+        </div>
+        <div class="coverage-card">
+          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>شرق وغرب الرياض</div>
+          <p>تغطية لأحياء العليا، قرطبة، الروضة، وحطين وما جاورها.</p>
+        </div>
+        <div class="coverage-card">
+          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>جنوب الرياض</div>
+          <p>فريق فني متنقل يغطي عرقة، الشفا، والمناطق الصناعية القريبة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="cta-banner">
+      <div>
+        <h2>عندك مشروع رخام أو سيراميك قريب؟</h2>
+        <p>اتصل بنا أو راسلنا واتساب، ونساعدك من اختيار النوع لحد التركيب.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+966568438242">اتصل الآن</a>
+        <a class="btn" style="background:rgba(255,255,255,.15);color:#fff" data-page="contact" href="#">صفحة التواصل</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>السيراميك والرخام</h4>
+          <p>توريد وتركيب الرخام الطبيعي والسيراميك بجودة عالية، لخدمة عملائنا في جميع أحياء الرياض.</p>
+        </div>
+        <div>
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="#" data-page="home">الرئيسية</a></li>
+            <li><a href="#" data-page="about">من نحن</a></li>
+            <li><a href="#" data-page="contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>تواصل معنا</h4>
+          <ul>
+            <li>0568438242</li>
+            <li>الرياض وجميع أحيائها</li>
+            <li>توريد وتركيب وصيانة</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 السيراميك والرخام. جميع الحقوق محفوظة.</span>
+        <span>الرياض - المملكة العربية السعودية</span>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- ======================= ABOUT PAGE ======================= -->
+<main id="about" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <span class="eyebrow-tag">من نحن</span>
+      <h1>وجهتك الموثوقة للرخام والسيراميك في الرياض</h1>
+      <p>نعمل في مجال توريد وتركيب الرخام والسيراميك منذ سنوات، بخبرة عملية في التعامل مع مختلف أنواع الخامات ومتطلبات المشاريع.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container story-grid">
+      <div>
+        <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:18px;">قصتنا</h2>
+        <p>بدأنا كمعرض صغير للرخام والسيراميك في الرياض، بهدف تقديم خامات ذات جودة عالية بأسعار واضحة دون مبالغة.</p>
+        <p>مع الوقت توسّعنا لنشمل خدمة التركيب الكامل، والتوريد بالجملة لمشاريع المقاولين، وصيانة وتلميع الرخام القديم لإعادة رونقه.</p>
+        <p>اليوم نفخر بخدمة عشرات المشاريع السكنية والتجارية في مختلف أحياء الرياض، مع الحفاظ على نفس المبدأ: جودة وشفافية والتزام بالمواعيد.</p>
+      </div>
+      <div class="mv-cards">
+        <div class="mv-card">
+          <h4>رسالتنا</h4>
+          <p>تقديم رخام وسيراميك بجودة عالية وتركيب دقيق يليق بذوق العميل ويدوم لسنوات طويلة.</p>
+        </div>
+        <div class="mv-card">
+          <h4>رؤيتنا</h4>
+          <p>أن نكون الخيار الأول في الرياض لكل من يبحث عن رخام وسيراميك بجودة موثوقة.</p>
+        </div>
+        <div class="mv-card">
+          <h4>قيمنا</h4>
+          <p>الصدق في عرض الخامات، الشفافية في الأسعار، والالتزام بمواعيد التسليم والتركيب.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow-tag">مجالات تخصصنا</span>
+        <h2>خبرة عملية في مختلف أنواع الرخام والسيراميك</h2>
+      </div>
+      <ul class="expertise-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>الرخام الطبيعي المستورد والمحلي</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>سيراميك الأرضيات والحوائط</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>كاونترات المطابخ والحمامات</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>واجهات المباني ودرج الرخام</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>التوريد بالجملة للمقاولين</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>جلي وتلميع الرخام القديم</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cta-about">
+    <div class="cta-banner">
+      <div>
+        <h2>محتاج رخام أو سيراميك لمشروعك؟</h2>
+        <p>تواصل معنا الآن وخلي فريقنا يساعدك من الاختيار للتركيب.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" data-page="contact" href="#">تواصل معنا</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-bottom" style="border-top:none;padding-top:0;">
+      <span>© 2026 السيراميك والرخام. جميع الحقوق محفوظة.</span>
+      <span>الرياض - المملكة العربية السعودية</span>
+    </div>
+  </footer>
+</main>
+
+<!-- ======================= CONTACT PAGE ======================= -->
+<main id="contact" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <span class="eyebrow-tag">اتصل بنا</span>
+      <h1>محتاج رخام أو سيراميك؟ تواصل معنا الآن</h1>
+      <p>اختر الطريقة الأنسب لك، اتصال مباشر أو واتساب أو تعبئة النموذج، وفريقنا يرد عليك بأسرع وقت.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <h3>بيانات التواصل</h3>
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.94.68 2.86a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.22-1.25a2 2 0 0 1 2.11-.45c.92.32 1.88.55 2.86.68A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <span class="label">اتصال مباشر</span>
+            <a class="big-phone" href="tel:+966568438242">0568438242</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <div>
+            <span class="label">مناطق الخدمة</span>
+            الرياض وجميع أحيائها
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div>
+            <span class="label">أوقات العمل</span>
+            يوميًا من 9 صباحًا حتى 10 مساءً
+          </div>
+        </div>
+        <a class="btn btn-whatsapp" href="https://wa.me/966568438242?text=مرحبا%2C%20أحتاج%20استفسار%20عن%20السيراميك%20والرخام" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.45 1.29 4.9L2 22l5.32-1.39a9.9 9.9 0 0 0 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.64-1.03-5.13-2.9-7C17.18 3.03 14.68 2 12.04 2zm5.8 14.14c-.24.68-1.4 1.33-1.93 1.4-.5.07-1.11.1-1.79-.11-.41-.13-.95-.31-1.63-.61-2.87-1.24-4.74-4.13-4.89-4.32-.14-.19-1.17-1.56-1.17-2.98 0-1.42.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.11.32.02.51-.09.19-.14.31-.27.48-.14.17-.29.38-.41.51-.14.15-.29.31-.12.6.16.29.73 1.2 1.57 1.95 1.08.96 1.99 1.26 2.28 1.4.29.14.46.12.63-.07.18-.19.75-.87.95-1.17.19-.29.39-.24.65-.15.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.72-.17 1.4z"/></svg>
+          تواصل عبر واتساب
+        </a>
+      </div>
+
+      <div class="form-card">
+        <h3>اطلب عرض سعر أو معاينة</h3>
+        <p class="hint">عبّي البيانات وبتنفتح رسالة واتساب جاهزة تلقائيًا لإرسالها لنا مباشرة.</p>
+        <form id="contact-form">
+          <div class="form-row">
+            <div class="field">
+              <label for="c-name">الاسم</label>
+              <input id="c-name" type="text" placeholder="اسمك" required>
+            </div>
+            <div class="field">
+              <label for="c-phone">رقم الجوال</label>
+              <input id="c-phone" type="tel" placeholder="05XXXXXXXX" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="c-district">الحي</label>
+              <select id="c-district">
+                <option>شمال الرياض</option>
+                <option>شرق الرياض</option>
+                <option>غرب الرياض</option>
+                <option>جنوب الرياض</option>
+                <option>وسط الرياض</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="c-type">نوع الطلب</label>
+              <select id="c-type">
+                <option>رخام طبيعي</option>
+                <option>سيراميك أرضيات/حوائط</option>
+                <option>كاونتر مطبخ/حمام</option>
+                <option>واجهات ودرج</option>
+                <option>توريد بالجملة</option>
+                <option>صيانة وتلميع</option>
+              </select>
+            </div>
+          </div>
+          <div class="field full" style="margin-bottom:16px;">
+            <label for="c-msg">تفاصيل الطلب</label>
+            <textarea id="c-msg" rows="4" placeholder="اذكر مساحة المشروع أو أي تفاصيل تساعدنا نجهز لك عرض سعر"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">إرسال الطلب عبر واتساب</button>
+        </form>
+        <p class="form-note">بالضغط على إرسال، بيتفتح تطبيق واتساب برسالة جاهزة تقدر تعدّلها قبل الإرسال.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="coverage-note">
+        <h4>نخدم جميع أحياء الرياض</h4>
+        <p>سواء كان مشروعك في شمال الرياض أو جنوبها أو شرقها أو غربها، فريقنا قادر على الوصول إليك لعمل معاينة وتوريد وتركيب.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-bottom" style="border-top:none;padding-top:0;">
+      <span>© 2026 السيراميك والرخام. جميع الحقوق محفوظة.</span>
+      <span>الرياض - المملكة العربية السعودية</span>
+    </div>
+  </footer>
+</main>
+
+<!-- FLOATING ACTIONS -->
+<div class="floating-actions">
+  <a class="fab fab-whatsapp" href="https://wa.me/966568438242?text=مرحبا%2C%20أحتاج%20استفسار%20عن%20السيراميك%20والرخام" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+    <span class="tip">واتساب فوري</span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.45 1.29 4.9L2 22l5.32-1.39a9.9 9.9 0 0 0 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.64-1.03-5.13-2.9-7C17.18 3.03 14.68 2 12.04 2zm5.8 14.14c-.24.68-1.4 1.33-1.93 1.4-.5.07-1.11.1-1.79-.11-.41-.13-.95-.31-1.63-.61-2.87-1.24-4.74-4.13-4.89-4.32-.14-.19-1.17-1.56-1.17-2.98 0-1.42.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.11.32.02.51-.09.19-.14.31-.27.48-.14.17-.29.38-.41.51-.14.15-.29.31-.12.6.16.29.73 1.2 1.57 1.95 1.08.96 1.99 1.26 2.28 1.4.29.14.46.12.63-.07.18-.19.75-.87.95-1.17.19-.29.39-.24.65-.15.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.72-.17 1.4z"/></svg>
+  </a>
+  <button class="fab fab-contact" data-page="contact" aria-label="اتصل بنا">
+    <span class="tip">اتصل بنا</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.94.68 2.86a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.22-1.25a2 2 0 0 1 2.11-.45c.92.32 1.88.55 2.86.68A2 2 0 0 1 22 16.92z"/></svg>
+  </button>
+</div>
+
+<script>
+  function goToPage(target){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const el = document.getElementById(target);
+    if(el){ el.classList.add('active'); }
+    document.querySelectorAll('nav.main-nav button, .mobile-menu-links button').forEach(b=>{
+      if(b.dataset.page === target){ b.setAttribute('aria-current','page'); }
+      else { b.removeAttribute('aria-current'); }
+    });
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+  }
+
+  document.querySelectorAll('[data-page]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      goToPage(el.dataset.page);
+      closeMobileMenu();
+    });
+  });
+
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+  function openMobileMenu(){
+    mobileMenu.classList.add('is-open');
+    mobileMenuOverlay.classList.add('is-open');
+    hamburgerBtn.classList.add('is-active');
+    hamburgerBtn.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu(){
+    mobileMenu.classList.remove('is-open');
+    mobileMenuOverlay.classList.remove('is-open');
+    hamburgerBtn.classList.remove('is-active');
+    hamburgerBtn.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  hamburgerBtn.addEventListener('click', ()=>{
+    if(mobileMenu.classList.contains('is-open')){ closeMobileMenu(); }
+    else { openMobileMenu(); }
+  });
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
+  mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape'){ closeMobileMenu(); }
+  });
+
+  const form = document.getElementById('contact-form');
+  if(form){
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('c-name').value.trim();
+      const phone = document.getElementById('c-phone').value.trim();
+      const district = document.getElementById('c-district').value;
+      const type = document.getElementById('c-type').value;
+      const msg = document.getElementById('c-msg').value.trim();
+      let text = `مرحبا، معي طلب بخصوص السيراميك والرخام:%0Aالاسم: ${encodeURIComponent(name)}%0Aالجوال: ${encodeURIComponent(phone)}%0Aالحي: ${encodeURIComponent(district)}%0Aنوع الطلب: ${encodeURIComponent(type)}`;
+      if(msg){ text += `%0Aتفاصيل: ${encodeURIComponent(msg)}`; }
+      window.open(`https://wa.me/966568438242?text=${text}`, '_blank');
+    });
+  }
+</script>
+
+</body>
+</html>
